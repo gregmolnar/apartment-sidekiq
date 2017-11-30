@@ -16,9 +16,9 @@ module Apartment
         end
 
         ::Sidekiq.configure_server do |config|
-          config.client_middleware do |chain|
-            chain.add Apartment::Sidekiq::Middleware::Client
-          end
+          # config.client_middleware do |chain|
+          #   chain.add Apartment::Sidekiq::Middleware::Client
+          # end
 
           config.server_middleware do |chain|
             if defined?(::Sidekiq::Batch::Server)
